@@ -1,1 +1,1 @@
-# wow-honor
+# WoW Honor
