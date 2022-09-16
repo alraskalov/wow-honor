@@ -1,5 +1,6 @@
 import { FC } from 'react';
+import Header from '../Header/Header';
 
-export const App: FC = (): JSX.Element => (
-  <div className="">Hello, World of Warcraft</div>
-);
+export const App: FC = (): JSX.Element => {
+  return <Header />;
+};
