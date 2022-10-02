@@ -1,0 +1,6 @@
+.button {
+  @apply my-1 flex h-9 cursor-pointer items-center justify-center gap-1 rounded-md border-2 border-black-gray-600 bg-black-gray-600 pl-1 pr-3 font-bold hover:border-grayish-blue-400;
+  &__image {
+    @apply h-7 rounded-full bg-granite-500 p-[2px];
+  }
+}
