@@ -1,0 +1,36 @@
+.button {
+  @apply relative cursor-pointer select-none rounded-md border-2 border-black-gray-600 bg-black-gray-600 p-2 pr-3 hover:border-grayish-blue-400;
+  &__container {
+    @apply flex items-center gap-2;
+  }
+
+  &__image {
+    @apply h-12 w-12 rounded-full bg-granite-500 p-2 opacity-75;
+  }
+}
+
+.text {
+  @apply w-full;
+  &__title {
+    @apply font-semibold capitalize;
+  }
+
+  &__subtitle {
+    @apply hidden text-xs text-grey-window-200 xl:block;
+  }
+}
+
+.icon {
+  @apply absolute top-1 right-1 flex h-5 w-5 items-center justify-center rounded p-1;
+  &_cross {
+    @apply bg-pink-crayola;
+  }
+
+  &_plus {
+    @apply bg-green-sea;
+  }
+
+  &_disabled {
+    @apply hidden;
+  }
+}

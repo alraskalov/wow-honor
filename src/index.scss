@@ -4,6 +4,10 @@
 
 @layer components {
   .container-xl {
-    @apply mx-auto my-0 w-full max-w-xl;
+    @apply mx-auto my-0 w-full max-w-7xl;
+  }
+
+  .cut-text {
+    @apply overflow-hidden text-ellipsis whitespace-nowrap;
   }
 }

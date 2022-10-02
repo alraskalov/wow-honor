@@ -1,0 +1,122 @@
+.header {
+  @apply text-white;
+
+  &__nav {
+    @apply relative z-40 bg-bluish-black;
+  }
+}
+
+.nav {
+  &__info {
+    @apply hidden h-7 text-sm lg:block;
+  }
+
+  &__main {
+    @apply hidden h-12 transition-all lg:block;
+  }
+
+  &__submenu {
+    @apply box-border h-0 overflow-hidden;
+    transition: height 0.1s ease 0s;
+  }
+
+  &__main:hover .main__container &__submenu {
+    @apply h-[410px];
+    transition: height 0.2s ease 0s;
+  }
+}
+
+.main {
+  &__container {
+    @apply border-b-2 border-granite-500 bg-black-gray-700;
+  }
+
+  &__wrapper {
+    @apply grid grid-cols-6 gap-3 border-black-gray-700 bg-black-gray-700 transition;
+  }
+
+  &__logo {
+    @apply flex h-12 items-center gap-1 pl-4 font-poppins text-3xl font-bold hover:text-turquoise;
+  }
+
+  &__menu {
+    @apply col-span-4 flex justify-center;
+  }
+}
+
+.logo {
+  &__img {
+    @apply mt-1 h-10;
+  }
+}
+
+.menu {
+  &__container {
+    @apply flex items-center gap-2 px-8;
+  }
+}
+
+.info {
+  &__container {
+    @apply flex h-7 items-center justify-between gap-3 px-2 opacity-100 transition;
+  }
+
+  &__element {
+    @apply text-center;
+  }
+}
+
+.submenu {
+  &__container {
+    @apply flex flex-col justify-center py-2;
+  }
+
+  &__main {
+    @apply grid grid-cols-5 gap-2;
+  }
+
+  &__element {
+    @apply w-full;
+  }
+}
+
+.element {
+  &__title {
+    @apply mt-1 text-center font-semibold uppercase text-grey-window-200;
+  }
+
+  &__list {
+    @apply flex w-full flex-col gap-2;
+  }
+}
+
+.other {
+  &__container {
+    @apply mt-3 grid grid-cols-7 gap-2 border-t-2 border-black-gray-600 border-opacity-50 pt-3;
+  }
+
+  &__link {
+    @apply cursor-pointer rounded-md border-2 border-black-gray-600 bg-black-gray-600 p-1 pr-3 opacity-75 hover:border-grayish-blue-400 hover:opacity-100;
+    &_settings {
+      @apply col-start-7 col-end-8 cursor-pointer select-none rounded-md border-2 border-black-gray-600 bg-black-gray-600 p-1 pr-3 opacity-50 hover:border-grayish-blue-400 hover:opacity-100 transition-all;
+
+      &_active {
+        @apply border-green-sea opacity-100 hover:border-green-sea;
+      }
+    }
+  }
+}
+
+.link {
+  &__container {
+    @apply flex items-center gap-1;
+  }
+
+  &__img {
+    @apply h-8 w-8 rounded-full bg-granite-500 p-1 opacity-75;
+  }
+
+  &__text {
+    @apply text-sm font-semibold;
+  }
+}
