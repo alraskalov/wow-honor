@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unknown-property */
 import { FC, useState, useEffect } from 'react';
 import logo from '../../assets/logo.svg';
 import rules from '../../assets/rules.png';
