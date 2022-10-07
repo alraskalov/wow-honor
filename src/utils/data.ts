@@ -1,3 +1,5 @@
+import rules from '../assets/rules.png';
+
 export const menu = [
   {
     title: 'Тайтл',
@@ -117,6 +119,37 @@ export const menu = [
           'https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_necroticplague.jpg',
         name: 'Заглушка16',
         description: 'Заглушка16',
+      },
+    ],
+  },
+];
+
+export const other = [
+  {
+    title: 'Другое',
+    list: [
+      {
+        image: rules,
+        name: 'Правила',
+        description: '',
+      },
+      {
+        image:
+          'https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_necroticplague.jpg',
+        name: 'Заглушка17',
+        description: 'Заглушка17',
+      },
+      {
+        image:
+          'https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_necroticplague.jpg',
+        name: 'Заглушка18',
+        description: 'Заглушка18',
+      },
+      {
+        image:
+          'https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_necroticplague.jpg',
+        name: 'Заглушка19',
+        description: 'Заглушка19',
       },
     ],
   },

@@ -15,14 +15,18 @@
     @apply hidden h-12 transition-all lg:block;
   }
 
+  &__main:hover .main__container &__submenu {
+    @apply h-[410px];
+    transition: height 0.2s ease 0s;
+  }
+
   &__submenu {
     @apply box-border h-0 overflow-hidden;
     transition: height 0.1s ease 0s;
   }
 
-  &__main:hover .main__container &__submenu {
-    @apply h-[410px];
-    transition: height 0.2s ease 0s;
+  &__mobile-menu {
+    @apply block h-12 w-full bg-black-gray-700 lg:hidden;
   }
 }
 
@@ -98,7 +102,7 @@
   &__link {
     @apply cursor-pointer rounded-md border-2 border-black-gray-600 bg-black-gray-600 p-1 pr-3 opacity-75 hover:border-grayish-blue-400 hover:opacity-100;
     &_settings {
-      @apply col-start-7 col-end-8 cursor-pointer select-none rounded-md border-2 border-black-gray-600 bg-black-gray-600 p-1 pr-3 opacity-50 hover:border-grayish-blue-400 hover:opacity-100 transition-all;
+      @apply col-start-7 col-end-8 cursor-pointer select-none rounded-md border-2 border-black-gray-600 bg-black-gray-600 p-1 pr-3 opacity-50 transition-all hover:border-grayish-blue-400 hover:opacity-100;
 
       &_active {
         @apply border-green-sea opacity-100 hover:border-green-sea;
@@ -118,5 +122,26 @@
 
   &__text {
     @apply text-sm font-semibold;
+  }
+}
+
+.mobile-menu {
+  &__burger {
+    @apply flex h-12 w-12 items-center justify-center;
+  }
+
+  &__container {
+    @apply invisible fixed top-12 left-0 right-0 bottom-0 h-0 overflow-y-auto border-t border-black-gray-600 bg-black-gray-700 transition-all delay-75;
+
+    &_active {
+      @apply visible h-full;
+    }
+  }
+
+  &__title {
+    @apply flex items-center border-t border-black-gray-600 px-3 pt-2 text-sm font-semibold uppercase text-grey-window-200;
+    &:hover {
+      @apply underline;
+    }
   }
 }

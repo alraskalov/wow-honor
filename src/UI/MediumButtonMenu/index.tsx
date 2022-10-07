@@ -17,7 +17,15 @@ const setListsToLocalStorage = (menu: Array<MainMenu>) => {
   localStorage.setItem('menu', JSON.stringify(menu));
 };
 
-export const MediumButtonMenu: FC<IMediumButtonMenu> = ({ route, image, title, description, settingsIsActive, mainMenu, setMainMenu }): JSX.Element => {
+export const MediumButtonMenu: FC<IMediumButtonMenu> = ({
+  route,
+  image,
+  title,
+  description,
+  settingsIsActive,
+  mainMenu,
+  setMainMenu,
+}): JSX.Element => {
   const checkMenu = mainMenu.some((el) => el.title === title);
 
   const handleClickIcon = (e: MouseEvent<HTMLButtonElement>) => {
