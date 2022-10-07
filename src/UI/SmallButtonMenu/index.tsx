@@ -7,7 +7,11 @@ interface ISmallButtonMenu {
   title: string;
 }
 
-export const SmallButtonMenu: FC<ISmallButtonMenu> = ({ route, image, title }): JSX.Element => {
+export const SmallButtonMenu: FC<ISmallButtonMenu> = ({
+  route,
+  image,
+  title,
+}): JSX.Element => {
   return (
     <a href={route} className={styles.button}>
       <img className={styles.button__image} src={image} alt="" />

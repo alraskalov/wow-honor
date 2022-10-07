@@ -2,7 +2,8 @@ import { FC, useState, useEffect } from 'react';
 import logo from '../../assets/logo.svg';
 import rules from '../../assets/rules.png';
 import { MediumButtonMenu, SmallButtonMenu } from '../../UI';
-import { menu } from '../../utils/data';
+import { ExtraSmallButtonMenu } from '../../UI/ExtraSmallButtonMenu/ExtraSmallButtonMenu';
+import { menu, other } from '../../utils/data';
 import { MainMenu } from '../types';
 import styles from './Header.module.scss';
 
@@ -16,14 +17,16 @@ const getListsFromLocalStorage = (): Array<MainMenu> | [] => {
 export const Header: FC = (): JSX.Element => {
   const [mainMenu, setMainMenu] = useState<MainMenu[]>([]);
   const [settingsIsActive, setSettingsIsActive] = useState<boolean>(false);
+  const [menuIsActive, setMenuIsActive] = useState<boolean>(false);
   const listsFromLocalStorage = getListsFromLocalStorage();
 
   const handleClickMenuSettings = () => setSettingsIsActive(!settingsIsActive);
+  const handleClickBurger = () => setMenuIsActive(!menuIsActive);
 
   useEffect(() => {
     setMainMenu(listsFromLocalStorage);
   }, []);
-
+  
   return (
     <header className={styles.header}>
       <nav className={`${styles.header__nav} nav`}>
@@ -33,7 +36,10 @@ export const Header: FC = (): JSX.Element => {
             <li className={styles.info__element}>Ежедневный сброс:</li>
           </ul>
         </div>
-        <div className={`${styles.nav__main} main`}>
+        <div
+          onMouseLeave={() => setSettingsIsActive(false)}
+          className={`${styles.nav__main} main`}
+        >
           <div className={styles.main__container}>
             <div className={`${styles.main__wrapper}`}>
               <a className={`${styles.main__logo} logo`} href="/">
@@ -44,6 +50,7 @@ export const Header: FC = (): JSX.Element => {
                 <div className={styles.menu__container}>
                   {mainMenu.map(({ route, image, title }) => (
                     <SmallButtonMenu
+                      key={title}
                       route={route}
                       image={image}
                       title={title}
@@ -116,6 +123,61 @@ export const Header: FC = (): JSX.Element => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        <div className={`${styles['nav__mobile-menu']} mobile-menu'`}>
+          <div className="flex justify-between">
+            <button
+              onClick={handleClickBurger}
+              type="button"
+              className={`${styles['mobile-menu__burger']}`}
+            >
+              <i className="fas fa-bars text-2xl" />
+            </button>
+            <div className="flex items-center">
+              <a href="/" aria-current="page" className="text-2xl font-bold">
+                Jailer
+              </a>
+            </div>
+            <div />
+          </div>
+          <div
+            className={`${styles['mobile-menu__container']} ${
+              menuIsActive ? styles['mobile-menu__container_active'] : ''
+            }`}
+          >
+            {menu.map(({ list, title }) => (
+              <div className="group text-center">
+                <div className={`${styles['mobile-menu__title']}`}>
+                  <p>{title}</p>
+                </div>
+                <div className="grid grid-cols-2 gap-2 p-2">
+                  {list.map(({ image, name }) => (
+                    <ExtraSmallButtonMenu
+                      key={name}
+                      name={name}
+                      image={image}
+                    />
+                  ))}
+                </div>
+              </div>
+            ))}
+            {other.map(({ title, list }) => (
+              <div className="group text-center">
+                <div className={`${styles['mobile-menu__title']}`}>
+                  <p>{title}</p>
+                </div>
+                <div className="grid grid-cols-3 gap-2 p-2">
+                  {list.map(({ image, name }) => (
+                    <ExtraSmallButtonMenu
+                      key={name}
+                      name={name}
+                      image={image}
+                    />
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </nav>

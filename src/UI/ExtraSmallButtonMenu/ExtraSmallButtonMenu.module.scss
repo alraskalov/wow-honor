@@ -1,0 +1,11 @@
+.button {
+  @apply block w-full text-sm transition hover:text-turquoise;
+
+  &__container {
+    @apply flex items-center gap-2 rounded-md bg-black-gray-600 bg-opacity-75 py-1 pl-1 pr-2;
+  }
+
+  &__image {
+    @apply h-8 w-8 rounded-full bg-granite-500 p-1 opacity-75;
+  }
+}
